@@ -1,0 +1,44 @@
+import React from "react";
+// import "./download.css";
+
+class Test extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  downloadEmployeeData = () => {
+    fetch("https://cors-anywhere.herokuapp.com/" + URL, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/pdf",
+      },
+    }).then((response) => {
+      response.blob().then((blob) => {
+        let url = window.URL.createObjectURL(blob);
+        let a = document.createElement("a");
+        a.href = url;
+        // a.download = "employees.pdf";
+        a.setAttribute("download", `FileName.pdf`);
+        a.click();
+      });
+      //window.location.href = response.url;
+    });
+  };
+
+  render() {
+    return (
+      <div id="container">
+        <h1>Download File using React App</h1>
+        <h3>Download Employee Data using Button</h3>
+        <button onClick={this.downloadEmployeeData}>Download</button>
+        <p />
+        <h3>Download Employee Data using Link</h3>
+        <a href="#" onClick={this.downloadEmployeeData}>
+          Download
+        </a>
+      </div>
+    );
+  }
+}
+
+export default Test;

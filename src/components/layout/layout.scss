@@ -1,0 +1,25 @@
+.header {
+  height: 60px;
+  background: blue;
+  width: 100%;
+}
+.sidebar-and-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+
+  .sidebar {
+    width: 300px;
+    // background: red;
+    height: 92vh;
+  }
+  .content {
+    width: 100%;
+    // background: yellow;
+    height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

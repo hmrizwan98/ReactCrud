@@ -1,0 +1,16 @@
+table {
+  min-width: 600px;
+  position: relative;
+  tr > th:first-child {
+    background: red !important;
+    position: sticky;
+    left: 0;
+    z-index: 100;
+  }
+  tr > td:first-child {
+    background: red;
+    position: sticky;
+    left: 0;
+    z-index: 100;
+  }
+}
